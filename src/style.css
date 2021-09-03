@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500&display=swap");
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Urbanist", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a:hover {
+    color: #fff;
+}
+.slider-link:hover .movie_info {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 1%,
+        rgba(0, 0, 0, 0.8) 62%,
+        rgba(0, 0, 0, 1) 99%
+    );
+}
+
+p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+a:not(:last-child) {
+    margin-right: 1rem;
+}
+header {
+    box-shadow: 0 2px 5px #000;
+}
+
+nav {
+    background-color: rgb(0, 0, 0);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"] {
+    display: block;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.movie-result_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie_result-col {
+    margin: 2rem 1rem;
+    width: 250px;
+}
+
+.poster-col {
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+}
+
+.poster-col::before {
+    content: "";
+    content: "";
+    width: 100%;
+    background-color: grey;
+    height: 100%;
+    display: block;
+    position: absolute;
+    filter: opacity(0.2);
+}
+.heading {
+    margin: 1rem;
+    position: relative;
+}
+
+.heading h2::before {
+    content: "";
+    border-left: 6px solid #fff;
+    padding-right: 20px;
+}
+
+.rating_col {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 0 7px 0px rgba(255, 197, 37, 0.522);
+}
+
+.movie_heading {
+    font-size: 1.7rem;
+}
+
+.movie-info {
+    width: 200px;
+}
+
+.movie-info h4 {
+    line-height: 1.4;
+}
+
+.row {
+    display: flex;
+}
+.row-wrap {
+    flex-wrap: wrap;
+}
+.row-nowrap {
+    flex-wrap: nowrap;
+}
+
+.rating {
+    font-weight: bold;
+}
+.trending_row {
+    display: flex;
+}
+.slider_col {
+    margin: 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+        rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+        rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.border-rounded {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movie_info {
+    position: absolute;
+    bottom: 0;
+    background: rgb(208, 208, 207);
+    background: linear-gradient(
+        180deg,
+        rgba(208, 208, 207, 0) 0%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+}
+
+.movie_info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    border-radius: 3px;
+    background-color: rgba(243, 151, 22, 0.88);
+    padding: 10px;
+}
+
+.slider_link {
+    display: block;
+    width: 100%;
+}
+
+.detail_col {
+    width: 100%;
+    padding: 5rem 0;
+}
+.detail_poster {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.detail_text-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.detail_text-top h2 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+.detail_text-bottom {
+    margin-top: 20px;
+}
+
+img.detail_poster-img {
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px,
+        rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px,
+        rgb(0 0 0 / 7%) 0px 16px 16px;
+}
+
+.trend_row {
+    overflow-x: scroll;
+}
+.result_row {
+    justify-content: space-around;
+}
+
+.result_poster {
+    width: 200px;
+}
+
+.result_info {
+    margin-bottom: 2.5rem;
+}
+
+.result_info p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    width: 200px;
+}
+
+.result_container {
+    margin: 5rem 3rem;
+}
