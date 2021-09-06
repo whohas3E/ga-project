@@ -4,9 +4,9 @@ function Nav({ logo }) {
         <header>
             <nav>
                 <div>
-                    <div>
+                    <Link to="/">
                         <h4>{logo}</h4>
-                    </div>
+                    </Link>
                 </div>
                 <div>
                     <Link to="/">Home</Link>

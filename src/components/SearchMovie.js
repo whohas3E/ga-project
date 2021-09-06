@@ -3,8 +3,8 @@ function SearchMovie({ results }) {
     return (
         <div className="row row-wrap justify-content-around">
             {results.map(function (result) {
-                    return <MovieResult key={result.id} {...result} />;
-                })}
+                return <MovieResult key={result.id} {...result} />;
+            })}
         </div>
     );
 }

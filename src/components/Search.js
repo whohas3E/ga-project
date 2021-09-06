@@ -1,11 +1,10 @@
 const { useState, useEffect } = require("react");
 const SearchMovie = require("./SearchMovie");
 
-function Search({title}) {
+function Search({ title }) {
     const [searchValue, setSearchValue] = useState([]);
     const [inputValue, setInputValue] = useState("");
 
-    
     function handleOnChange(e) {
         e.preventDefault();
         setInputValue(e.target.value);
@@ -16,8 +15,8 @@ function Search({title}) {
                 if (!searchValue.errors) {
                     setSearchValue(searchValue.results);
                 } else {
-                   setSearchValue([]);
-                }              
+                    setSearchValue([]);
+                }
             });
         });
     }
@@ -25,9 +24,6 @@ function Search({title}) {
         e.preventDefault();
     }
 
-    useEffect(function () {
-        
-    }, []);
     return (
         <div className="container-fluid">
             <div className="heading text-center">

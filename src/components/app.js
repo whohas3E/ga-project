@@ -32,7 +32,7 @@ function App() {
                     <Search title={searchTitle} />
                     <Trends trendings={trendings} />
                 </Route>
-                <Route path="/movie">
+                <Route path="/movie/:id">
                     <MovieDetail details={trendings} />
                 </Route>
 

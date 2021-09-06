@@ -5,11 +5,18 @@ function Detail({
     overview,
     release_date,
     vote_average,
-    genre_ids,
-    media_type,
+    genres,
+    status,
 }) {
+    
     let imgURL = `https://image.tmdb.org/t/p/`;
-   
+    let movieTitle = title || name;
+    let genreName =
+        genres &&
+        genres.map(function (genre) {
+            return genre.name;
+        });
+    let genre = genreName.join(", ");
     return (
         <div className="detail_col">
             <div className="col-md-12 d-flex flex-column flex-md-row">
@@ -26,12 +33,12 @@ function Detail({
                 <div className="col-sm-12 col-md-6">
                     <div className="detail_text-col ">
                         <div className="detail_text-tag">
-                            <label>{media_type}</label>
+                            <label className="label-border">{status}</label>
                         </div>
                         <div className="detail_text-top">
-                            <h2>{title}</h2>
+                            <h2>{movieTitle}</h2>
                             <ul>
-                                <li>{genre_ids}</li>
+                                <li>{genre}</li>
                                 <li>{release_date}</li>
                             </ul>
 

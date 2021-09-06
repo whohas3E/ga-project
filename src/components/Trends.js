@@ -8,7 +8,7 @@ function Trends({ trendings }) {
                 </div>
             </div>
             <div className="trend_row">
-                <div className="row row-nowrap">
+                <div className="row row-nowrap mb-scrollbar">
                     {trendings.map(function (trending) {
                         return <Trend key={trending.id} trend={trending} />;
                     })}
