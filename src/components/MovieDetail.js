@@ -21,20 +21,23 @@ function MovieDetail() {
     }, []);
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="back-link">
-                    <Link to="/">
-                        <button>Back To Home</button>
-                    </Link>
-                </div>
-            </div>
             <div className="row row-wrap">
-                <div className="heading">
-                    <h2 className="movie_heading">Movie Details</h2>
+                <div className="col-12 bgImg">
+                    <div className="back-link">
+                        <Link to="/">
+                            <button>Back To Home</button>
+                        </Link>
+                    </div>
+                    <div className="heading">
+                        <h2 className="movie_heading">Overviews</h2>
+                    </div>
+                    <div className="col-12 col-md-10 m-auto">
+                        {detail && <Detail {...detail} />}
+                    </div>
                 </div>
             </div>
 
-            <div className="row">{detail && <Detail {...detail} />}</div>
+            <div className="row"></div>
         </div>
     );
 }

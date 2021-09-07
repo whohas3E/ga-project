@@ -1,7 +1,8 @@
 function About() {
     return (
-        <div>
-            <h2>About: Listed Project Brief</h2>
+        <div className="container-fluid">
+            <h2>Create a MovieDB SPA with ReactJS</h2>
+
         </div>
     );
 }

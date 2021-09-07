@@ -1,4 +1,5 @@
 const { Link } = require("react-router-dom");
+const Carousel = require("react-elastic-carousel");
 
 function Trend({ trend }) {
     let imgURL = `https://image.tmdb.org/t/p/`;
@@ -8,6 +9,10 @@ function Trend({ trend }) {
     return (
         <div className="slider_wrapper">
             <div className="slider_col">
+                <Carousel>
+                    <div>Item 1</div>
+                </Carousel>
+                console.log("hi");
                 <Link to={`/movie/${trend.id}`} className="slider-link">
                     <div className="poster_wrapper">
                         <img

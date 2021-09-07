@@ -28,4 +28,4 @@ i <= 2 ? 1star : i > 2 && i <= 3 ? 2stars : i > 3 && i <=5 ? 3 stars : i > 5 && 
 2. How to call the title with name/original name/priginal title instead of title?
 3. How to make the empty movie path = a css className with a empty image photo?
 4. How to make carousel slider for the movie trending?
-5.
+5. If movie search not found record, add Sorry no record found.

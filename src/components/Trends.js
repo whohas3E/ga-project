@@ -1,4 +1,5 @@
 const Trend = require("./Trend");
+
 function Trends({ trendings }) {
     return (
         <div className="container-fluid">
