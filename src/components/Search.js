@@ -26,9 +26,7 @@ function Search({ title }) {
 
     return (
         <div className="container-fluid">
-            <div className="heading text-center">
-                <h2>{title}</h2>
-            </div>
+
             <div className="result_input">
                 <form onSubmit={handleOnSubmit}>
                     <input

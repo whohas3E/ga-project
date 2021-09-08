@@ -1,4 +1,5 @@
 const { Link } = require("react-router-dom");
+
 function Nav({ logo }) {
     return (
         <header>
@@ -9,7 +10,8 @@ function Nav({ logo }) {
                     </Link>
                 </div>
                 <div>
-                    <Link to="/">Home</Link>
+                    <Link to="/search">Search</Link>
+                    <Link to="/trending">Trending</Link>
                     <Link to="/about">About</Link>
                 </div>
             </nav>
