@@ -1,7 +1,9 @@
-const Trend = require("./Trend");
+const { useState, useEffect } = require("react");
+const { getPopular } = require("../services/api");
+const MovieCard = require("./movieCard");
 const Slider = require("react-slick").default;
 
-function Trends({ trendings }) {
+function Popular() {
     let settings = {
         dots: false,
         infinite: true,
@@ -50,20 +52,32 @@ function Trends({ trendings }) {
             },
         ],
     };
+
+    // useState
+    const [populars, setPopulars] = useState([]);
+    // getPopular function from service/api return to here
+    useEffect(function () {
+        getPopular().then(function (data) {
+            setPopulars(data.results);
+        });
+    }, []);
     return (
-        <div className="container-fluid trending_container">
-            <div className="row row-wrap">
-                <div className="heading">
-                    <h2 className="movie_heading">Trending Now</h2>
-                </div>
+        <div className="container-fluid popular slider_container">
+            {/* movie slider title (seperator) */}
+            <div className="slider_title popular_title">
+                <h2 className="slider_title-heading popular_title-heading">
+                    popular
+                </h2>
+                <hr />
             </div>
+            {/* movie display in slick slider */}
             <Slider {...settings}>
-                {trendings.map(function (trending) {
-                    return <Trend key={trending.id} trend={trending} />;
+                {populars.map(function (popular) {
+                    return <MovieCard key={popular.id} {...popular} />;
                 })}
             </Slider>
         </div>
     );
 }
 
-module.exports = Trends;
+module.exports = Popular;

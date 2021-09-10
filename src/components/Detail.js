@@ -1,30 +1,28 @@
+const { Link, useHistory } = require("react-router-dom");
+const { FiChevronLeft } = require("react-icons/fi");
+
 function Detail({
-    name,
-    title,
     poster_path,
     backdrop_path,
+    name,
+    original_name,
+    title,
+    original_title,
     overview,
+    original_language,
     release_date,
     vote_average,
     genres,
     runtime,
-    tagline,
-    original_language,
 }) {
     let posterPath = poster_path || backdrop_path;
-    let size = "w500";
-    let backdrop = `https://image.tmdb.org/t/p/${size}${backdrop_path}`;
+    let size = "w342";
+    let backSize = "original";
+    let backdrop = `https://image.tmdb.org/t/p/${backSize}${backdrop_path}`;
     let imgURL = `https://image.tmdb.org/t/p/${size}${posterPath}`;
+    const history = useHistory();
 
-    let emptyImg = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoCzq9xjEDLMt0eFPm5RP_-kTFYleKW3iheQ&usqp=CAU`;
-
-    if (posterPath !== null) {
-        posterPath;
-    } else {
-        imgURL = emptyImg;
-    }
-    let movieTitle = title || name;
-
+    let movieTitle = title || name || original_title || original_name;
     let genreName =
         genres &&
         genres.map(function (genre) {
@@ -32,50 +30,92 @@ function Detail({
         });
 
     let genre = genreName.join(", ");
-
-    let runtimeHH = runtime / 60;
+    // Covert minutes to hh mm
+    let runtimeHH = Math.floor(runtime / 60).toFixed(0);
+    let runtimeMin = (runtime % 60).toFixed(0);
+    let time = runtimeHH + " hr " + runtimeMin + " min ";
 
     let rate = vote_average;
     let rateToDemical = rate.toFixed(1);
     return (
-        <div className="col-md-12 d-flex flex-column flex-md-row">
-            <div className="col-sm-12 col-md-6">
-                <div className="detail_poster">
-                    <img
-                        className="detail_poster-img border-rounded"
-                        src={`${imgURL}`}
-                        crossOrigin="true"
-                        alt={`${title} poster`}
-                    />
+        <div className="container-fluid  detail detail_container">
+            <div className="row row-wrap">
+                <div className="backdrop detail_backdrop">
+                    <img src={`${backdrop}`} crossOrigin="true" />
                 </div>
-            </div>
-            <div className="col-sm-12 col-md-6">
-                <div className="detail_text-col ">
-                    <div className="detail_text-top">
-                        <h1 className="text-uppercase font-weight-bold">
-                            {movieTitle}
-                        </h1>
-
-                        <div className="detail_row">
-                            <div className="detail_runtime">{runtimeHH}</div>
-                            <div className="detail_language-tag">
-                                {original_language}
+                <div className="detail_content">
+                    <div className="detail_content-wrapper">
+                        <div className="detail_content-top">
+                            <div className="detail_content-top_link">
+                                <Link
+                                    onClick={function () {
+                                        history.goBack();
+                                    }}
+                                >
+                                    <FiChevronLeft />
+                                    <span>Back</span>
+                                </Link>
+                            </div>
+                            <div className="detail_title">
+                                <h2 className="detail_title-heading">
+                                    overview
+                                </h2>
+                                <hr />
                             </div>
                         </div>
-                    </div>
-                    <div className="detail_text-center text-justify">
-                        <p>{overview}</p>
-                    </div>
-                    <div className="detail_text-bottom text-justify">
-                        <p>
-                            <span>Release Date:</span> {release_date}
-                        </p>
-                        <p>
-                            <span>Rating:</span> {rateToDemical} / 10
-                        </p>
-                        <p>
-                            <span>Genre: </span> {genre}
-                        </p>
+                        <div className="detail_content-bottom">
+                            <div className="detail_content-bottom_left">
+                                <div className="detail_poster">
+                                    <img
+                                        className="detail_poster-img border-rounded"
+                                        src={`${imgURL}`}
+                                        crossOrigin="true"
+                                        alt={`${title} poster`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="detail_content-bottom_right">
+                                <div className="detail_right-inner ">
+                                    <div className="detail_right-inner_top">
+                                        <h1 className="detail_right-inner_heading">
+                                            {movieTitle}
+                                        </h1>
+
+                                        <div className="detail_right-inner-tag">
+                                            <div className="detail_language-tag">
+                                                {original_language.toUpperCase()}
+                                            </div>
+                                            <div className="detail_runtime-tag">
+                                                {time}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="detail_right-inner_center">
+                                        <p>{overview}</p>
+                                    </div>
+                                    <div className="detail_right-inner_bottom">
+                                        <p>
+                                            <span className="text-uppercase">
+                                                Release Date:
+                                            </span>{" "}
+                                            {release_date}
+                                        </p>
+                                        <p>
+                                            <span className="text-uppercase">
+                                                Rating:
+                                            </span>{" "}
+                                            {rateToDemical} / 10
+                                        </p>
+                                        <p>
+                                            <span className="text-uppercase">
+                                                Genre:{" "}
+                                            </span>{" "}
+                                            {genre}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

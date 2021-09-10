@@ -1,0 +1,10 @@
+<svg width="800" height="600" viewBox="0 0 841.9 595.3" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <g id="svg_8">
+   <rect stroke="#000" stroke-width="12" rx="21" id="svg_1" height="173.59171" width="253.99999" y="195.5" x="273" fill="#fff"/>
+   <line stroke="#000" stroke-width="12" id="svg_2" y2="404.5" x2="475.35254" y1="404.5" x1="333.06919" fill="none"/>
+   <text font-style="normal" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="'Poppins'" font-size="37" id="svg_4" y="297.5" x="310.91723" stroke-width="0" stroke="#000" fill="#000000">MOVIEDB</text>
+  </g>
+ </g>
+</svg>

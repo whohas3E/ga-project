@@ -3,4 +3,4 @@ dist
 .parcel-cache
 .env
 *.zip
-src/bootstrap-grid.css
+ReadMe.md

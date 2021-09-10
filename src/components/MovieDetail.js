@@ -1,42 +1,32 @@
 const Detail = require("./Detail");
-const { Link, useParams } = require("react-router-dom");
+const { useParams } = require("react-router-dom");
 const { useEffect, useState } = require("react");
+const { getMovieDetail } = require("../services/api");
 
 function MovieDetail() {
     const { id } = useParams();
     const [detail, setDetail] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(function () {
         if (id) {
-            let apiKey = `?api_key=${process.env.TMDB_API_KEY}`;
-            let url = `https://api.themoviedb.org/3/movie/${id}${apiKey}`;
-            fetch(url, { method: "GET" })
-                .then(function (res) {
-                    return res.json();
-                })
-                .then(function (data) {
+            setIsLoading(true);
+            getMovieDetail(id).then(function (data) {
+                console.log(data);
+                if (data.id) {
                     setDetail(data);
-                    console.log(data);
-                });
+                } else {
+                    setDetail(null);
+                }
+                setIsLoading(false);
+            });
         }
     }, []);
     return (
-        <div className="container-fluid">
-            <div className="row row-wrap">
-            <div className="detail_col">
-            <div className="back-link">
-                    <Link to="/">
-                        <span>Back</span>
-                    </Link>
-                </div>
-                <div className="heading">
-                    <h2 className="movie_heading">Overviews</h2>
-                </div>
-                {detail && <Detail {...detail} />}
-            </div>
-
-            </div>
-                
-        </div>
+        <>
+            {!isLoading &&
+                (detail ? <Detail {...detail} /> : <span>No movie found</span>)}
+        </>
     );
 }
 

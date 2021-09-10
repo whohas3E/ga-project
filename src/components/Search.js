@@ -1,23 +1,20 @@
-const { useState, useEffect } = require("react");
-const SearchMovie = require("./SearchMovie");
+const { useState } = require("react");
+const { searchMovie } = require("../services/api");
+const MovieCard = require("./movieCard");
 
-function Search({ title }) {
+function Search() {
     const [searchValue, setSearchValue] = useState([]);
     const [inputValue, setInputValue] = useState("");
 
     function handleOnChange(e) {
         e.preventDefault();
         setInputValue(e.target.value);
-        let apiKey = `?api_key=${process.env.TMDB_API_KEY}`;
-        let url = `https://api.themoviedb.org/3/search/movie${apiKey}&language=en-US&page=1&include_adult=false&query=${e.target.value}`;
-        fetch(url, { method: "GET" }).then(function (res) {
-            return res.json().then(function (searchValue) {
-                if (!searchValue.errors) {
-                    setSearchValue(searchValue.results);
-                } else {
-                    setSearchValue([]);
-                }
-            });
+        searchMovie(e.target.value).then(function (searchValue) {
+            if (!searchValue.errors) {
+                setSearchValue(searchValue.results);
+            } else {
+                setSearchValue([]);
+            }
         });
     }
     function handleOnSubmit(e) {
@@ -25,9 +22,8 @@ function Search({ title }) {
     }
 
     return (
-        <div className="container-fluid">
-
-            <div className="result_input">
+        <div className="search search_container">
+            <div className="search_input">
                 <form onSubmit={handleOnSubmit}>
                     <input
                         type="text"
@@ -37,8 +33,24 @@ function Search({ title }) {
                     />
                 </form>
             </div>
-            <div className="result_container">
-                <SearchMovie results={searchValue} />
+            <div className="search_result">
+                <div className="row row-wrap justify-content-around">
+                    {!!inputValue &&
+                        (searchValue.length ? (
+                            searchValue.map(function (result) {
+                                return (
+                                    <MovieCard key={result.id} {...result} />
+                                );
+                            })
+                        ) : (
+                            <div>
+                                <div className="noResult-icon"></div>
+                                <div>
+                                    <span>Urghh....no movie was found !</span>
+                                </div>
+                            </div>
+                        ))}
+                </div>
             </div>
         </div>
     );
