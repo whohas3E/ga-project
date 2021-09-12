@@ -6,7 +6,7 @@ const { FaRegUserCircle } = require("react-icons/fa");
 function Nav() {
     return (
         <header>
-            <nav>
+            <nav className="navbar ">
                 <div className="nav_left">
                     <Link to="/">
                         <h4 className="nav_left-logo">

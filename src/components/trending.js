@@ -11,10 +11,10 @@ function Trending() {
         });
     }, []);
     return (
-        <div className="container-fluid trending_container">
+        <div className="container-fluid trending_container slider_container">
             <div className="row row-wrap">
-                <div className="slider_heading">
-                    <h2 className="slider_heading-title">Trending Now</h2>
+                <div className="slider_title">
+                    <h2 className="slider_title-heading">Trending Now</h2>
                 </div>
             </div>
 

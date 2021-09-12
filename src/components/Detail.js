@@ -67,7 +67,9 @@ function Detail({
                             <div className="detail_content-bottom_left">
                                 <div className="detail_poster">
                                     <img
-                                        className="detail_poster-img border-rounded"
+                                        className={`detail_poster-img border-rounded ${
+                                            poster_path ? " " : "noImg"
+                                        }`}
                                         src={`${imgURL}`}
                                         crossOrigin="true"
                                         alt={`${title} poster`}

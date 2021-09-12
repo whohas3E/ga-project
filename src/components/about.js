@@ -1,3 +1,6 @@
+const { BsFillBootstrapFill } = require("react-icons/bs");
+const { FaReact } = require("react-icons/fa");
+
 function About() {
     return (
         <div className="container-fluid">
@@ -5,21 +8,69 @@ function About() {
                 <div className="row">
                     <div className="about_card">
                         <div className="about_card-content">
-                            <h4>About Project</h4>
-                            <p>
-                                Due to Malaysia MCO, I decided to build a movie
-                                application. Mostly people working from home and
-                                have more time to watch TV. One of the reason, I
-                                watch Netflix too. With the knowledges I learned
-                                through the 60 hours of Javascript course. I
-                                used React Framework:
+                            <h3 className="about_card-content_heading">
+                                About Project
+                            </h3>
+                            <p className="about_card-content_text">
+                                Thank you Akademi Ga provided 60-Hours
+                                JavaScript course. Due to Malaysia MCO, most
+                                people spent more time at home with watching TV.
+                                I oftenly watch Netflix too. Hence, I decided to
+                                build a movie application with The MovieDB API.
+                                This movie application is my small project for
+                                my learning JavaScript course. Movvie is my
+                                first React's framework project. More features
+                                will be added in the future.
                             </p>
-                            <ul>
-                                <li>React Use Hook</li>
-                                <li>React Router</li>
-                                <li>React Slick</li>
-                                <li>React Icons</li>
-                            </ul>
+                            <hr />
+
+                            <div className="icons-col">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className="icons-col_left">
+                                            <p className="icons-col_heading">
+                                                Tools I used:
+                                            </p>
+                                            <div className="row">
+                                                <div className="col-6 col-md-6 col-lg-6">
+                                                    <div class="icons-grid icons_item-1">
+                                                        <FaReact className="icon-react" />
+                                                        <p>React Framework</p>
+                                                    </div>
+                                                </div>
+                                                <div className="col-6 col-md-6 col-lg-6">
+                                                    <div class="icons-grid icons_item-2">
+                                                        <BsFillBootstrapFill className="icon-bs" />
+                                                        <p>Bootstrap Layout</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="icons-col_right">
+                                            <p className="icons-col_heading">
+                                                Thanks to:
+                                            </p>
+
+                                            <div className="row">
+                                                <div className="col-6 col-md-6 col-lg-6">
+                                                    <div class="icons-grid icons_item-3">
+                                                        <div className="icon-tmdb"></div>
+                                                        <p>TMDB API</p>
+                                                    </div>
+                                                </div>
+                                                <div className="col-6 col-md-6 col-lg-6">
+                                                    <div class="icons-grid icons_item-4">
+                                                        <div className="icon-ga"></div>
+                                                        <p>Akademi GA</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

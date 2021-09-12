@@ -25,7 +25,16 @@ function MovieDetail() {
     return (
         <>
             {!isLoading &&
-                (detail ? <Detail {...detail} /> : <span>No movie found</span>)}
+                (detail ? (
+                    <Detail {...detail} />
+                ) : (
+                    <div className="detail_noResult">
+                        <div className="noResult-icon"></div>
+                        <div>
+                            <span>Urghh....no movie details was found !</span>
+                        </div>
+                    </div>
+                ))}
         </>
     );
 }
