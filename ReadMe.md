@@ -5,17 +5,17 @@ I will create a movie single application. I want to build a movie app is because
 #### How I start my project
 
 -   [x] Register an account from TMDB (https://www.themoviedb.org/settings/api) and get the API KEY
--   [ ] Collect all the possible API URL to use in the movie app. \
+-   [ ] Collect all the possible API URL to use in the movie app. 
     -   [x] Trending (https://api.themoviedb.org/3/trending/all/day${apiKEY}) 
-    -   [x] Upcoming (https://api.themoviedb.org/3/movie/upcoming${apiKEY}&language=en-US&page=1) \
-    -   [x] Popular (https://api.themoviedb.org/3/movie/popular${apiKEY}&language=en-US&page=1) \
-    -   [x] Top Rated (https://api.themoviedb.org/3/movie/top_rated${apiKEY}&language=en-US&page=1) \
-    -   [x] Search (https://api.themoviedb.org/3/search/company${apiKEY}&page=1) \
-    -   [ ] Genres (https://api.themoviedb.org/3/genre/movie/list${apiKEY}&language=en-US) \
-    -   [ ] Review (https://api.themoviedb.org/3/review/{review_id}${apiKEY}) \
-    -   [ ] Account (https://api.themoviedb.org/3/account${apiKEY}) \
+    -   [x] Upcoming (https://api.themoviedb.org/3/movie/upcoming${apiKEY}&language=en-US&page=1) 
+    -   [x] Popular (https://api.themoviedb.org/3/movie/popular${apiKEY}&language=en-US&page=1) 
+    -   [x] Top Rated (https://api.themoviedb.org/3/movie/top_rated${apiKEY}&language=en-US&page=1) 
+    -   [x] Search (https://api.themoviedb.org/3/search/company${apiKEY}&page=1) 
+    -   [ ] Genres (https://api.themoviedb.org/3/genre/movie/list${apiKEY}&language=en-US) 
+    -   [ ] Review (https://api.themoviedb.org/3/review/{review_id}${apiKEY}) 
+    -   [ ] Account (https://api.themoviedb.org/3/account${apiKEY}) 
     -   [ ] Image URL & Sizes. \
-        - [ ] Image URL (http://image.tmdb.org/t/p/w500/) \
+        - [ ] Image URL (http://image.tmdb.org/t/p/w500/) 
         *   Image sizes: w200/w342/w500/w700/ original
 
 ### Technical Hurdle
