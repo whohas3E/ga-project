@@ -11,7 +11,6 @@ const Trending = require("./trending");
 const MovieDetail = require("./MovieDetail");
 
 function App() {
-    // logo title
 
     return (
         <BrowserRouter>

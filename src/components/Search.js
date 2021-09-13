@@ -6,9 +6,10 @@ function Search() {
     const [searchValue, setSearchValue] = useState([]);
     const [inputValue, setInputValue] = useState("");
 
+    // set data errors is when the users empty the input, so the result wont be jumping/cause error
     function handleOnChange(e) {
-        e.preventDefault();
-        setInputValue(e.target.value);
+        e.preventDefault(); // prevent page refresh
+        setInputValue(e.target.value); // when user type in input, will target the words while user type
         searchMovie(e.target.value).then(function (searchValue) {
             if (!searchValue.errors) {
                 setSearchValue(searchValue.results);
@@ -17,6 +18,7 @@ function Search() {
             }
         });
     }
+    // when click submit/enter keyword, will not refresh page
     function handleOnSubmit(e) {
         e.preventDefault();
     }

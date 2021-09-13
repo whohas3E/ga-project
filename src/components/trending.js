@@ -9,7 +9,7 @@ function Trending() {
         getTrending().then(function (data) {
             setTrendings(data.results);
         });
-    }, []);
+    }, []); // the page get trending result  only load once
     return (
         <div className="container-fluid trending_container slider_container">
             <div className="row row-wrap">

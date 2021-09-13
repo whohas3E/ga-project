@@ -4,8 +4,11 @@ const { useEffect, useState } = require("react");
 const { getMovieDetail } = require("../services/api");
 
 function MovieDetail() {
+    // useParam - link movies id to get movie detail 
     const { id } = useParams();
+    // get moviedetail data
     const [detail, setDetail] = useState(null);
+    // loading movie when click for more movie information, so will hide the "no movie found" when reach the page
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(function () {

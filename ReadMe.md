@@ -6,20 +6,21 @@ I will create a movie single application. I want to build a movie app is because
 
 -   [x] Register an account from TMDB (https://www.themoviedb.org/settings/api) and get the API KEY
 -   [ ] Collect all the possible API URL to use in the movie app. \
-    -   [x] Trending (https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>) \
-    -   [x] Upcoming (https://api.themoviedb.org/3/movie/upcoming?api_key=<<api_key>>&language=en-US&page=1) \
-    -   [x] Popular (https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1) \
-    -   [x] Top Rated (https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1) \
-    -   [x] Search (https://api.themoviedb.org/3/search/company?api_key=<<api_key>>&page=1) \
-    -   [ ] Genres (https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US) \
-    -   [ ] Review (https://api.themoviedb.org/3/review/{review_id}?api_key=<<api_key>>) \
-    -   [ ] Account (https://api.themoviedb.org/3/account?api_key=<<api_key>>) \
-    -   [ ] Image URL & Sizes. - [ ] Image URL (http://image.tmdb.org/t/p/w500/) \
+    -   [x] Trending (https://api.themoviedb.org/3/trending/all/day${apiKEY}) 
+    -   [x] Upcoming (https://api.themoviedb.org/3/movie/upcoming${apiKEY}&language=en-US&page=1) \
+    -   [x] Popular (https://api.themoviedb.org/3/movie/popular${apiKEY}&language=en-US&page=1) \
+    -   [x] Top Rated (https://api.themoviedb.org/3/movie/top_rated${apiKEY}&language=en-US&page=1) \
+    -   [x] Search (https://api.themoviedb.org/3/search/company${apiKEY}&page=1) \
+    -   [ ] Genres (https://api.themoviedb.org/3/genre/movie/list${apiKEY}&language=en-US) \
+    -   [ ] Review (https://api.themoviedb.org/3/review/{review_id}${apiKEY}) \
+    -   [ ] Account (https://api.themoviedb.org/3/account${apiKEY}) \
+    -   [ ] Image URL & Sizes. \
+        - [ ] Image URL (http://image.tmdb.org/t/p/w500/) \
         *   Image sizes: w200/w342/w500/w700/ original
 
 ### Technical Hurdle
 
--   When I got the API return, I could'nt load the poster_path correctly. After consult with my instructor to solve it with 'crossOrifin="true"'. And yes, the problem was solved.
+-   When I got the API return, I could'nt load the poster_path correctly. After consult with my instructor to solve it with 'crossOrigin="true"'. And yes, the problem was solved.
 -   Many problem I actually faced in this project, etc using React JSX couldn't directly add conditional statement inside the return. only can inside a `<div>` or ternary is better.
 
 -   When the project comes with many components files, I felt confuse and mess up. End up I find a solution with putting all the API URL in "service/api.js" and return the function to each "popular movies", "upcoming movies", "trending movies"...

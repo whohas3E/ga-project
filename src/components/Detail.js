@@ -15,6 +15,7 @@ function Detail({
     genres,
     runtime,
 }) {
+    // movie image URL
     let posterPath = poster_path || backdrop_path;
     let size = "w342";
     let backSize = "original";
@@ -22,19 +23,21 @@ function Detail({
     let imgURL = `https://image.tmdb.org/t/p/${size}${posterPath}`;
     const history = useHistory();
 
+    // replacement of movie title
     let movieTitle = title || name || original_title || original_name;
+    // map each genre id
     let genreName =
         genres &&
         genres.map(function (genre) {
             return genre.name;
         });
-
+    // after map, join it with (,)
     let genre = genreName.join(", ");
     // Covert minutes to hh mm
     let runtimeHH = Math.floor(runtime / 60).toFixed(0);
     let runtimeMin = (runtime % 60).toFixed(0);
     let time = runtimeHH + " hr " + runtimeMin + " min ";
-
+    // Convert number to demical
     let rate = vote_average;
     let rateToDemical = rate.toFixed(1);
     return (

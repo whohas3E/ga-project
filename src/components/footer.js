@@ -5,6 +5,7 @@ function Footer() {
         <footer section="footer">
             <div className="footer_container text-center">
                 <div className="footer_container-top">
+                    {/* Create movie logo with react icon */}
                     <h5>
                         M<RiMovie2Fill className="icon-movie" />
                         VVIE
